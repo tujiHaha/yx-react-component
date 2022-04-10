@@ -1,0 +1,80 @@
+.menu-wrap {
+  box-shadow: 1px 1px 4px $gray-500;
+  list-style: none;
+  padding: 6px 10px;
+
+  &.menu-wrap-horizontal {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.sub-menu {
+  position: relative;
+  padding: 6px 10px;
+
+  .sub-menu-title {
+    position: relative;
+    padding: 0 20px 0px 0;
+    margin: 0;
+    cursor: pointer;
+
+    .sanjiao {
+      position: absolute;
+      top: 40%;
+      right: 0;
+      border: 4px solid $gray-700;
+      border-top: 4px solid transparent;
+      border-left: 4px solid transparent;
+      transform: rotate(225deg);
+      transform-origin: center;
+      transition: all 0.1s;
+
+      &.close {
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  .sub-menu-container {
+    list-style: none;
+    padding: 0;
+    background-color: #fff;
+  }
+  &.sub-memu-horizontal {
+    .sub-menu-container {
+      position: absolute;
+      left: 0;
+      top: 30px;
+      box-shadow: 1px 1px 4px $gray-500;
+    }
+  }
+}
+
+
+
+.menu-item {
+  padding: 4px 10px;
+  cursor: pointer;
+  border-color: transparent;
+
+  &.memu-item-active {
+    border-color: $blue;
+    color: $blue;
+  }
+
+  &.memu-item-horizontal {
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+  }
+
+  &.memu-item-vertical {
+    border-left-width: 2px;
+    border-left-style: solid;
+  }
+
+  &.memu-item-disabled {
+    border-color: transparent;
+    color: $gray-500;
+  }
+}

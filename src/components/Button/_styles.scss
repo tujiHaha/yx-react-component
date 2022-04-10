@@ -1,0 +1,38 @@
+.btn {
+  cursor: pointer;
+  @include buttonSize(6px 16px, 14px, 6px);
+  line-height: 1.5;
+
+  &:disabled {
+    cursor: not-allowed;
+    @include buttonType($gray-700, $gray-400);
+  }
+  &.btn-disabled {
+    cursor: not-allowed;
+    @include buttonType(transparent, $gray-800)
+  }
+}
+
+.btn-default {
+  @include buttonType($gray-500, $gray-100)
+}
+
+.btn-primary {
+  @include buttonType($blue, $gray-100)
+}
+
+.btn-danger {
+  @include buttonType($red, $gray-100)
+}
+
+.btn-link {
+  @include buttonType(transparent, $blue)
+}
+
+.btn-lg {
+  @include buttonSize(8px 24px, 16px, 8px);
+}
+
+.btn-sm {
+  @include buttonSize(4px 14px, 12px, 4px);
+}
