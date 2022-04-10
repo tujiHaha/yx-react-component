@@ -4,7 +4,7 @@ import { IBaseMenuItemProps } from './menuItem'
 type OnSelect = (selectedIndex: string) => void;
 
 export type modeType = 'horizontal' | 'vertical'
-interface IBaseMenuProps {
+export interface IBaseMenuProps {
   className?: string;
   defaultIndex?: string;
   onSelect?: OnSelect

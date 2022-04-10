@@ -3,7 +3,7 @@ import React, { useContext, useState } from 'react'
 import { IMyContext, myContext } from './menu'
 import { IBaseMenuItemProps } from './menuItem'
 
-interface IBaseSubMenuProps {
+export interface IBaseSubMenuProps {
   className?: string;
   children?: React.ReactNode;
   title: string;

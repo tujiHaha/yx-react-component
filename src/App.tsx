@@ -1,11 +1,7 @@
 import React from 'react'
-
-
-import Button from './components/Button/button'
-
-import Menu from './components/Menu/menu'
-import SubMenu from './components/Menu/subMenu'
-import MenuItem from './components/Menu/menuItem'
+import { createRoot } from 'react-dom/client';
+import { Button, Menu } from 'yx-react-component'
+import 'yx-react-component/dist/index.css'
 
 interface IBaseProps { }
 
@@ -26,28 +22,16 @@ const App: React.FC<IBaseProps> = () => {
     <br />
 
     <Menu defaultIndex='0' mode='horizontal' onSelect={(str: string) => console.log(str)} >
-      <MenuItem>菜单1</MenuItem>
-      <MenuItem disabled>菜单2</MenuItem>
-      <MenuItem>菜单3</MenuItem>
-      <SubMenu title='子菜单1'>
-        <MenuItem>副标题子菜单1</MenuItem>
-        <MenuItem>副标题子菜单1</MenuItem>
-        <MenuItem>副标题子菜单1</MenuItem>
-        <MenuItem>副标题子菜单1</MenuItem>
-      </SubMenu>
-      <MenuItem>菜单4</MenuItem>
-      <SubMenu title='子菜单5'>
-        <MenuItem>副标题子菜单1</MenuItem>
-        <MenuItem>副标题子菜单1</MenuItem>
-        <MenuItem>副标题子菜单1</MenuItem>
-        <MenuItem>副标题子菜单1</MenuItem>
-        <MenuItem>副标题子菜单1</MenuItem>
-        <MenuItem>副标题子菜单1</MenuItem>
-      </SubMenu>
+      <Menu.Item>菜单1</Menu.Item>
+      <Menu.Item>菜单2</Menu.Item>
+      <Menu.Item>菜单3</Menu.Item>
+      <Menu.Item>菜单4</Menu.Item>
+      <Menu.Item>菜单5</Menu.Item>
+      <Menu.Item>菜单6</Menu.Item>
     </Menu>
   </div>
 }
-
-
-export default App
+const container = document.getElementById('root') as HTMLElement;
+const root = createRoot(container);
+root.render(<App />);
 

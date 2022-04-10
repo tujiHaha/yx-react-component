@@ -4,7 +4,11 @@
   "description": "about react component",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack server --open"
+    "dev": "webpack server --open",
+    "build-ts": "tsc -p tsconfig.build.json",
+    "build-css": "node-sass ./src/styles/index.scss ./lib/dist/index.css",
+    "clean": "rimraf ./lib/dist",
+    "build": "npm run clean && npm run build-ts && npm run build-css"
   },
   "repository": {
     "type": "git",
@@ -37,6 +41,7 @@
   },
   "dependencies": {
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "yx-react-component": "^1.0.0"
   }
 }
