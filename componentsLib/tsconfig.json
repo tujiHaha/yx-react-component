@@ -15,11 +15,15 @@
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": false,
+    "isolatedModules": true,
     "noEmit": true,
     "jsx": "react"
   },
   "include": [
     "components"
-  ]
+  ],
+  // "baseUrl": ".",
+  // "paths": {
+  //   "tslib": ["node_modules/tslib/tslib.d.ts"]
+  // }
 }
