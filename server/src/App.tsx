@@ -1,9 +1,7 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client';
-
 import { Button } from 'yx-react-component'
-
-import '../../componentsLib/styles/index.scss'
+import 'yx-react-component/styles/index.scss'
 interface IBaseProps { }
 const App: React.FC<IBaseProps> = () => {
   return <div>
