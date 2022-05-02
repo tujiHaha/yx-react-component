@@ -1,9 +1,0 @@
-@function toRem($px) {
-  @return calc($px /2);
-}
-
-@mixin ipad {
-  @media (min-width: 501px) and (max-width: 1024px) {
-    @content;
-  }
-}

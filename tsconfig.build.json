@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/lib",
+    "module": "esnext",
+    "target": "ES5",
+    "declaration": true,
+    "jsx": "react",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true
+  },
+  "include": ["./src/components"],
+  // "exclude": ["components/Button", "components/Menu"]
+}
