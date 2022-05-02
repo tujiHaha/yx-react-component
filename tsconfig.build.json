@@ -9,5 +9,5 @@
     "allowSyntheticDefaultImports": true
   },
   "include": ["./src/components"],
-  // "exclude": ["components/Button", "components/Menu"]
+  "exclude": []
 }

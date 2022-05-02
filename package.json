@@ -5,11 +5,12 @@
   "main": "index.js",
   "scripts": {
     "clean": "rimraf ./dist",
+    "clean1": "rimraf node_modules",
     "copy-json": "node ./copy-file.js",
     "dev": "webpack server --open",
     "build-ts": "tsc -p tsconfig.build.json",
     "build-scss": "webpack --config webpack.config-css.js",
-    "build": "npm run clean && npm run build-ts && npm run build-scss && copy-json",
+    "build": "npm run clean && npm run build-ts && npm run build-scss && npm run copy-json",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
