@@ -1,39 +1,18 @@
-.btn {
-  cursor: pointer;
-  @include buttonSize(6px 16px, 14px, 6px);
-  line-height: 1.5;
+.package-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  padding: 0 64px;
+  border-radius: 40px;
+  line-height: 80px;
+  background: linear-gradient(266deg, #FE4C00 0%, #FE8C00 100%);
 
-  &:disabled {
-    cursor: not-allowed;
-    @include buttonType($gray-700, $gray-400);
+  @include ipad {
+    height: toRem(112px);
+    padding: 0 toRem(90px);
+    border-radius: toRem(56px);
+    line-height: toRem(112px);
   }
 
-  &.btn-disabled {
-    cursor: not-allowed;
-    @include buttonType(transparent, $gray-800)
-  }
-}
-
-.btn-default {
-  @include buttonType($gray-500, $gray-100)
-}
-
-.btn-primary {
-  @include buttonType($blue, $gray-100)
-}
-
-.btn-danger {
-  @include buttonType($red, $gray-100)
-}
-
-.btn-link {
-  @include buttonType(transparent, $blue)
-}
-
-.btn-lg {
-  @include buttonSize(8px 24px, 16px, 8px);
-}
-
-.btn-sm {
-  @include buttonSize(4px 14px, 12px, 4px);
 }

@@ -1,13 +1,13 @@
 {
   "compilerOptions": {
-    "outDir": "lib/dist",
+    "outDir": "dist/lib",
     "module": "esnext",
     "target": "ES5",
     "declaration": true,
-    "jsx":"react",
+    "jsx": "react",
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true
   },
-  "include": ["src"],
-  "exclude": ["src/App.tsx"]
+  "include": ["components"],
+  "exclude": ["components/Button", "components/Menu"]
 }

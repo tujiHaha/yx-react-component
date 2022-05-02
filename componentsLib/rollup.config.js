@@ -1,10 +1,7 @@
-import json from 'rollup-plugin-json';
 import typescript from 'rollup-plugin-typescript2'
 import {
   terser
 } from 'rollup-plugin-terser'
-import resolve from 'rollup-plugin-node-resolve'
-// import commonjs from 'rollup-plugin-commonjs'
 
 // 用于生成类型声名文件
 import dts from 'rollup-plugin-dts'

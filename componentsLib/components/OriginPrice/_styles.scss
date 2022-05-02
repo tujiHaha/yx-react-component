@@ -1,0 +1,12 @@
+.origin-price {
+  font-size: 20px;
+  font-weight: 400;
+  color: #b5b7bc;
+  line-height: 28px;
+  text-decoration: line-through;
+
+  @include ipad {
+    font-size: toRem(28px);
+    line-height: toRem(39px);
+  }
+}

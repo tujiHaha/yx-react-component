@@ -1,19 +1,9 @@
-@mixin buttonSize ($padding, $font-size, $border-raduis) {
-  padding: $padding;
-  font-size: $font-size;
-  border-radius: $border-raduis;
+@function toRem($px) {
+  @return calc($px /2);
 }
 
-
-@mixin buttonType($bgColor, $color) {
-  background-color: $bgColor;
-  border: 1px solid $bgColor;
-  color: $color;
-
-  &:active {
-    background-color: darken($bgColor, 1.5);
-    border: 1px solid darken($bgColor, 4);
-    box-shadow: 0px 0px 2px lighten($bgColor, 2);
-    transition: all .2s;
+@mixin ipad {
+  @media (min-width: 501px) and (max-width: 1024px) {
+    @content;
   }
 }
