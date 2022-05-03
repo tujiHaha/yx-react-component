@@ -24,33 +24,39 @@ export default {
   }
 } as Meta;
 
-const Template: Story<ButtonProps> = (args) => <Button {...args} >按钮</Button>;
+const Template: Story<ButtonProps> = (args) => <Button {...args} >默认按钮</Button>;
 
 
-export const Primary = Template.bind({});
-Primary.storyName = '默认按钮'
-Primary.parameters = {
+export const DefaultBtn = Template.bind({});
+DefaultBtn.storyName = '默认按钮'
+DefaultBtn.parameters = {
   docs: {
-    source: { code: '<Button title="默认按钮"></Button>' },
+    source: { code: '<Button>默认按钮</Button>' },
   },
 };
 
-export const Secondary = () => (
-  <Button href="http://www.baidu.com">link 按钮</Button>
-)
-Secondary.storyName = '链接按钮';
-Secondary.parameters = {
-  docs: {
-    source: { code: '<Button title="默认按钮"></Button>' },
-  },
-};
+
 
 export const third = () => (
   <>
-    <Button size="lg">大型按钮</Button>
-    <Button>默认大小</Button>
+    <Button size="default">默认大小按钮</Button>
     <Button size="sm">小型按钮</Button>
+    <Button size="default" disabled>小型按钮disabled</Button>
+    <Button size="default" style={{ width: '100%' }}>满行按钮</Button>
   </>
 )
 third.storyName = '不同大小按钮';
+
+third.parameters = {
+  docs: {
+    source: {
+      code: `<>
+    <Button size="default">默认大小按钮</Button>
+    <Button size="sm">小型按钮</Button>
+    <Button size="default" disabled>小型按钮disabled</Button>
+    <Button size="default" style={{ width: '100%' }}>满行按钮</Button>
+  </>` },
+  },
+};
+
 

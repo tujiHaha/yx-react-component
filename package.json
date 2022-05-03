@@ -11,7 +11,7 @@
     "build-ts": "tsc -p tsconfig.build.json",
     "build-scss": "webpack --config webpack.config-css.js",
     "build": "npm run clean && npm run build-ts && npm run build-scss && npm run copy-json",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "npm run build-scss --watch && start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
   "repository": {

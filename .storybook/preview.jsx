@@ -18,7 +18,7 @@ export const decorators = [
   (Story) => (
     <div
       style={{
-        margin: "3em",
+        margin: "10px",
       }}
     >
       <Story />

@@ -1,0 +1,97 @@
+.package-confirm-wrap {
+  @include maskMixin(100);
+
+  .package-confirm-content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #FFFFFF;
+    box-sizing: border-box;
+    text-align: center;
+    width: 624px;
+    border-radius: 36px;
+    padding: 60px 48px 40px;
+
+    @include ipad {
+      width: toRem(880px);
+      border-radius: toRem(36px);
+      padding: toRem(108px) toRem(48px) toRem(56px);
+    }
+
+    .package-confirm-title {
+      font-size: 32px;
+      font-weight: 400;
+      color: #333;
+      line-height: 1.5;
+      margin-bottom: 60px;
+
+      @include ipad {
+        font-size: toRem(38px);
+        line-height: toRem(54px);
+        margin-bottom: toRem(90px);
+      }
+    }
+
+    .package-confirm-sub-title {
+      font-size: 28px;
+      font-weight: 400;
+      color: #444;
+      line-height: 1.5;
+      margin-bottom: 60px;
+
+      @include ipad {
+        font-size: toRem(38px);
+        line-height: toRem(54px);
+        margin-bottom: toRem(90px);
+      }
+    }
+
+    .package-confirm-btn-bar {
+      display: flex;
+      justify-content: space-between;
+
+      .package-confirm-ok-btn {
+        background: #F3F8FC;
+        text-align: center;
+        display: block;
+        border: none;
+        color: #1F2B43;
+        width: 248px;
+        height: 80px;
+        line-height: 80px;
+        border-radius: 40px;
+        font-size: 28px;
+
+        @include ipad {
+          width: toRem(370px);
+          height: toRem(112px);
+          line-height: toRem(112px);
+          border-radius: toRem(56px);
+          font-size: toRem(40px);
+        }
+      }
+
+      .package-confirm-quit-btn {
+        background: linear-gradient(90deg, #FFB400 0%, #FE6B00 100%);
+        text-align: center;
+        display: block;
+        border: none;
+        color: #fff;
+        width: 248px;
+        height: 80px;
+        line-height: 80px;
+        border-radius: 40px;
+        font-size: 28px;
+
+        @include ipad {
+          width: toRem(370px);
+          height: toRem(112px);
+          line-height: toRem(112px);
+          border-radius: toRem(56px);
+          font-size: toRem(40px);
+        }
+      }
+    }
+  }
+}
