@@ -1,5 +1,5 @@
 @function toRem($px) {
-  @return $px /2;
+  @return $px*0.5;
 }
 
 @mixin ipad {

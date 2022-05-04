@@ -23,7 +23,7 @@ export var OriginPrice = function (props) {
     var _a;
     var style = props.style, size = props.size, unit = props.unit, price = props.price;
     var classes = classNames('origin-price', (_a = {},
-        _a["btn-".concat(size)] = size,
+        _a["btn-" + size] = size,
         _a));
     return (React.createElement("span", { className: classes, style: __assign({}, style) },
         unit,
