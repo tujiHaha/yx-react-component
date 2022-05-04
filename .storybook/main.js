@@ -3,18 +3,10 @@ module.exports = {
   stories: [
     "../src/components/**/*.stories.@(js|jsx|ts|tsx)"
   ],
-  addons: [{
-      name: '@storybook/addon-postcss',
-      options: {
-        postcssLoaderOptions: {
-          implementation: require('postcss'),
-        },
-      },
-    },
+  addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
-
   ],
   typescript: {
     reactDocgen: 'react-docgen-typescript',
@@ -37,11 +29,10 @@ module.exports = {
     // Make whatever fine-grained changes you need
     config.module.rules.push({
       test: /\.scss$/,
-      use: ['style-loader', 'css-loader', 'sass-loader'],
+      use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
       include: path.resolve(__dirname, '../'),
     });
 
-    // Return the altered config
     return config;
   },
   "framework": "@storybook/react"

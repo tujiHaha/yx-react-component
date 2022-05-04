@@ -15,10 +15,10 @@ export default {
     title: '原价组件',
     component: OriginPrice,
     argTypes: {
-        onClick: {
-            action: 'clicked',
-            description: '点击button时触发的事件',
-        },
+    // onClick: {
+    //   action: 'clicked',
+    //   description: '点击button时触发的事件',
+    // },
     }
 };
 var Template = function (args) { return React.createElement(OriginPrice, __assign({}, args, { price: 123 })); };

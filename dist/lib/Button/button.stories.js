@@ -32,23 +32,24 @@ export default {
         },
     }
 };
-var Template = function (args) { return React.createElement(Button, __assign({}, args), "\u6309\u94AE"); };
-export var Primary = Template.bind({});
-Primary.storyName = '默认按钮';
-Primary.parameters = {
+var Template = function (args) { return React.createElement(Button, __assign({}, args), "\u9ED8\u8BA4\u6309\u94AE"); };
+export var DefaultBtn = Template.bind({});
+DefaultBtn.storyName = '默认按钮';
+DefaultBtn.parameters = {
     docs: {
-        source: { code: '<Button title="默认按钮"></Button>' },
-    },
-};
-export var Secondary = function () { return (React.createElement(Button, { href: "http://www.baidu.com" }, "link \u6309\u94AE")); };
-Secondary.storyName = '链接按钮';
-Secondary.parameters = {
-    docs: {
-        source: { code: '<Button title="默认按钮"></Button>' },
+        source: { code: '<Button>默认按钮</Button>' },
     },
 };
 export var third = function () { return (React.createElement(React.Fragment, null,
-    React.createElement(Button, { size: "lg" }, "\u5927\u578B\u6309\u94AE"),
-    React.createElement(Button, null, "\u9ED8\u8BA4\u5927\u5C0F"),
-    React.createElement(Button, { size: "sm" }, "\u5C0F\u578B\u6309\u94AE"))); };
+    React.createElement(Button, { size: "default" }, "\u9ED8\u8BA4\u5927\u5C0F\u6309\u94AE"),
+    React.createElement(Button, { size: "sm" }, "\u5C0F\u578B\u6309\u94AE"),
+    React.createElement(Button, { size: "default", disabled: true }, "\u5C0F\u578B\u6309\u94AEdisabled"),
+    React.createElement(Button, { size: "default", style: { width: '100%' } }, "\u6EE1\u884C\u6309\u94AE"))); };
 third.storyName = '不同大小按钮';
+third.parameters = {
+    docs: {
+        source: {
+            code: "<>\n    <Button size=\"default\">\u9ED8\u8BA4\u5927\u5C0F\u6309\u94AE</Button>\n    <Button size=\"sm\">\u5C0F\u578B\u6309\u94AE</Button>\n    <Button size=\"default\" disabled>\u5C0F\u578B\u6309\u94AEdisabled</Button>\n    <Button size=\"default\" style={{ width: '100%' }}>\u6EE1\u884C\u6309\u94AE</Button>\n  </>"
+        },
+    },
+};

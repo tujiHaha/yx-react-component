@@ -2,8 +2,8 @@
 import { Meta } from '@storybook/react';
 declare const _default: Meta<import("@storybook/react").Args>;
 export default _default;
-export declare const Primary: any;
-export declare const Secondary: {
+export declare const DefaultBtn: any;
+export declare const third: {
     (): JSX.Element;
     storyName: string;
     parameters: {
@@ -13,8 +13,4 @@ export declare const Secondary: {
             };
         };
     };
-};
-export declare const third: {
-    (): JSX.Element;
-    storyName: string;
 };

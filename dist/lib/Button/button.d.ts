@@ -1,5 +1,5 @@
-import React, { FC, ButtonHTMLAttributes, AnchorHTMLAttributes } from 'react';
-export declare type ButtonSize = 'lg' | 'sm';
+import React, { FC, ButtonHTMLAttributes } from 'react';
+export declare type ButtonSize = 'default' | 'sm';
 interface BaseButtonProps {
     /**自定义类名 */
     className?: string;
@@ -10,14 +10,13 @@ interface BaseButtonProps {
     children: React.ReactNode;
 }
 declare type NativeButtonProps = BaseButtonProps & ButtonHTMLAttributes<HTMLElement>;
-declare type AnchorButtonProps = BaseButtonProps & AnchorHTMLAttributes<HTMLElement>;
-export declare type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>;
+export declare type ButtonProps = Partial<NativeButtonProps>;
 /**
  * 页面中最常用的的按钮元素，适合于完成特定的交互，支持 HTML button 和 a 链接 的所有属性
  * **引用方法如下**
  *
  * ~~~js
- * import { Button } from 'vikingship'
+ * import { Button } from 'yx-react-component'
  * ~~~
  */
 export declare const Button: FC<ButtonProps>;

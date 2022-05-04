@@ -27,7 +27,7 @@ import classNames from 'classnames';
  * **引用方法如下**
  *
  * ~~~js
- * import { Button } from 'vikingship'
+ * import { Button } from 'yx-react-component'
  * ~~~
  */
 export var Button = function (props) {
@@ -44,4 +44,5 @@ export var Button = function (props) {
 };
 Button.defaultProps = {
     disabled: false,
+    size: 'default'
 };
