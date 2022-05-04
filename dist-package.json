@@ -1,24 +1,19 @@
 {
   "name": "yx-react-component",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "",
   "main": "./lib/index.js",
-  "module": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "module": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "scripts": {},
-  "keywords": [
-    "Component",
-    "UI",
-    "React"
-  ],
+  "keywords": ["Component", "UI", "React"],
   "author": "",
   "license": "MIT",
-  "files": [
-    "dist"
-  ],
-
+  "files": ["lib", "css"],
+  "devDependencies": {
+    "classnames": "^2.3.1"
+  },
   "peerDependencies": {
-    "classnames": "^2.3.1",
     "react": "^16.8.0"
   }
 }

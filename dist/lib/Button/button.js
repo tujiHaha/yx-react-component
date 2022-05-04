@@ -37,7 +37,7 @@ export var Button = function (props) {
     , ["className", "disabled", "size", "children"]);
     // btn, btn-lg, btn-primary
     var classes = classNames('package-btn', className, (_a = {},
-        _a["package-btn-" + size] = size,
+        _a["package-btn-".concat(size)] = size,
         _a['disabled'] = disabled,
         _a));
     return (React.createElement("button", __assign({ className: classes, disabled: disabled }, restProps), children));
