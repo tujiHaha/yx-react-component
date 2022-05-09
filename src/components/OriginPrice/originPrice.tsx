@@ -4,10 +4,10 @@ import classNames from 'classnames'
 export interface IBaseProps {
   /**自定义样式 */
   style?: React.CSSProperties;
+  /**价格数 */
+  price: number;
   /**大小 */
   size?: 'lg' | 'sm' | 'default';
-  /**价格数 */
-  price: string | number;
   /**单位￥ */
   unit?: string
 }
@@ -17,6 +17,7 @@ export interface IBaseProps {
  * **引用方法如下**  
  * 
  * ~~~js
+ * 基本用法
  * import { OriginPrice } from 'yx-react-component'
  * ~~~
  */
