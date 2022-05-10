@@ -39,9 +39,10 @@ DefaultBtn.parameters = {
 
 export const third = () => (
   <>
-    <Button size="default">默认大小按钮</Button>
+    <Button size="default" onClick={() => console.log('click me')}>默认大小按钮</Button>
     <Button size="sm">小型按钮</Button>
     <Button size="default" disabled>小型按钮disabled</Button>
+    <Button size="default" timerCount={0}>不需要防重复</Button>
     <Button size="default" style={{ width: '100%' }}>满行按钮</Button>
   </>
 )
@@ -51,9 +52,10 @@ third.parameters = {
   docs: {
     source: {
       code: `<>
-    <Button size="default">默认大小按钮</Button>
+    <Button size="default" onClick={() => console.log('click me')}>默认大小按钮</Button>
     <Button size="sm">小型按钮</Button>
     <Button size="default" disabled>小型按钮disabled</Button>
+    <Button size="default" timerCount={0}>不需要防重复</Button>
     <Button size="default" style={{ width: '100%' }}>满行按钮</Button>
   </>` },
   },

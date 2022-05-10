@@ -1,0 +1,167 @@
+@keyframes slideUp {
+  from {
+    transform: translateY(100%)
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.package-login-panel {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 10;
+  padding: 40px 24px;
+  box-sizing: border-box;
+  border-radius: 36px 36px 0 0;
+  animation: slideUp 0.2s;
+
+  @include ipad {
+    padding: toRem(56px) toRem(48px);
+    border-radius: toRem(50px) toRem(50px) 0 0;
+  }
+
+  .package-login-close-icon {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 40px;
+    right: 24px;
+    background: url('https://namibox-app-web.oss-cn-hangzhou.aliyuncs.com/assets/miniapp/images/learn-report/close-icon-login.png') no-repeat center / 36px 36px;
+    z-index: 11;
+
+    @include ipad {
+      width: toRem(56px);
+      height: toRem(56px);
+      top: toRem(60px);
+      right: toRem(34px);
+      background: url('https://namibox-app-web.oss-cn-hangzhou.aliyuncs.com/assets/miniapp/images/learn-report/close-icon-login.png') no-repeat center / 25px 25px;
+
+    }
+  }
+
+  .package-login-title {
+    height: 45px;
+    font-size: 32px;
+    font-weight: 500;
+    color: #1F2B42;
+    line-height: 45px;
+    position: relative;
+    margin-bottom: 70px;
+    text-align: center;
+
+    @include ipad {
+      height: toRem(63px);
+      font-size: toRem(45px);
+      line-height: toRem(63px);
+      margin-bottom: toRem(98px);
+    }
+  }
+
+  .package-login-input-panel {
+    .package-login-input-item {
+      height: 80px;
+      background: #F3F8FC;
+      border-radius: 40px;
+      display: flex;
+      box-sizing: border-box;
+      padding: 18px 24px;
+      margin-bottom: 30px;
+
+      @include ipad {
+        height: toRem(112px);
+        border-radius: toRem(56px);
+        padding: toRem(25px) toRem(34px);
+        margin-bottom: toRem(42px);
+      }
+
+      .package-login-input {
+        flex: 1;
+        height: 44px;
+        line-height: 40px;
+        box-sizing: border-box;
+        padding: 2px 16px;
+        border: none;
+        outline: none;
+        color: #1F2B42;
+        font-size: 28px;
+        background-color: transparent;
+
+        &::placeholder {
+          color: #788295;
+        }
+
+        @include ipad {
+          height: toRem(62px);
+          line-height: toRem(56px);
+          padding: toRem(3px) toRem(22px);
+          font-size: toRem(40px);
+        }
+      }
+
+
+      .package-login-get-code-btn {
+        font-size: 28px;
+        color: #FE6B00;
+        line-height: 44px;
+        padding-right: 16px;
+
+        @include ipad {
+          font-size: toRem(40px);
+          line-height: toRem(60px);
+          padding-right: toRem(22px);
+        }
+
+        &.disable {
+          color: #788295;
+        }
+      }
+    }
+  }
+
+  .submit-btn {
+    text-align: center;
+    color: #fff;
+    background: linear-gradient(90deg, #FFB400 0%, #FE6B00 100%);
+    line-height: 80px;
+    border-radius: 40px;
+    margin: 0 0 40px;
+
+    @include ipad {
+      border-radius: toRem(56px);
+      line-height: toRem(112px);
+      font-size: toRem(40px);
+      margin: 0 0 toRem(56px);
+    }
+
+    &.disable {
+      background: linear-gradient(90deg, #FFDA7F 0%, #FFB57F 100%);
+    }
+  }
+
+  .notice {
+    font-size: 24px;
+    font-weight: 400;
+    color: #1F2B42;
+    line-height: 33px;
+    text-align: center;
+
+    @include ipad {
+      font-size: toRem(34px);
+      line-height: toRem(48px);
+    }
+
+    .protocal {
+      color: #FE6B00;
+    }
+  }
+}
+
+
+.package-login-mask-animation {
+  @include maskMixin(2, rgba(0, 0, 0, 0.5));
+}
