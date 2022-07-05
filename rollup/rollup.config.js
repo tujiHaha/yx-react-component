@@ -11,7 +11,7 @@ const overrides = {
   compilerOptions: {
     declaration: true
   },
-  exclude: ["src/**/*.test.tsx", "src/**/*.stories.tsx", "src/**/*.stories.mdx", "src/setupTests.ts"]
+  exclude: ["src/**/*.test.tsx", "src/**/*.stories.tsx", "src/**/*.stories.mdx"]
 }
 export default {
   input: './src/index.tsx',
