@@ -1,0 +1,9 @@
+.namid-slider-wrap {
+	width: 100%;
+	overflow: hidden;
+
+	.namid-swipers {
+		display: flex;
+		flex-wrap: nowrap;
+	}
+}
