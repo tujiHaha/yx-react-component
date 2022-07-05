@@ -1,10 +1,9 @@
 import { FC } from 'react';
-declare type ICallback = () => void;
 export interface IConfirmProps {
     /**点击确认的事件  */
-    onOKCallback?: ICallback;
+    onOKCallback?: () => void;
     /**点击取消的事件 */
-    onCancelCallback?: ICallback;
+    onCancelCallback?: () => void;
     /**标题 */
     title?: string;
     /**副标题 */
@@ -23,4 +22,3 @@ export interface IConfirmProps {
  * ~~~
  */
 export declare const Confirm: FC<IConfirmProps>;
-export {};

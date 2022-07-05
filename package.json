@@ -1,6 +1,6 @@
 {
   "name": "yx-react-component",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "about react component",
   "main": "dist/index.es.js",
   "module": "dist/index.es.js",

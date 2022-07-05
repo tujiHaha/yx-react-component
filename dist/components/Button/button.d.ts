@@ -1,5 +1,5 @@
-import React, { FC, ButtonHTMLAttributes } from 'react';
-export declare type ButtonSize = 'default' | 'sm';
+import { FC, ButtonHTMLAttributes } from 'react';
+export declare type ButtonSize = 'default' | 'sm' | 'lg';
 interface BaseButtonProps {
     /**自定义类名 */
     className?: string;
@@ -8,7 +8,7 @@ interface BaseButtonProps {
     /**设置 Button 的尺寸 */
     size?: ButtonSize;
     /**设置 点击事件 */
-    onClick?: React.MouseEventHandler<HTMLElement>;
+    onClick?: () => void;
     /**设置 点击事件防重复的时间间隔 默认300毫秒 如不需要防重复设为0 */
     timerCount?: number;
     /**设置 按钮文字 */
