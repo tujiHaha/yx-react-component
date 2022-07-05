@@ -1,7 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom';
-import { Button, OriginPrice } from './index'
-import '../styles/index.scss'
+import { Button, OriginPrice } from '../dist/index.es.js'
+// import '../styles/index.scss'
+import '../dist/index.css'
 
 interface IBaseProps { }
 const App: React.FC<IBaseProps> = () => {

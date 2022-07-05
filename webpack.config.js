@@ -16,6 +16,7 @@ module.exports = {
   devServer: {
     static: "./dist",
     port: 9000,
+    open: true
   },
   module: {
     rules: [{
@@ -49,6 +50,23 @@ module.exports = {
             loader: 'sass-loader',
             options: {}
           },
+        ],
+      },
+
+      {
+        test: /\.css$/i,
+        use: [{
+            loader: 'style-loader'
+          },
+          {
+            loader: "css-loader",
+            options: {
+              modules: false
+            }
+          },
+          {
+            loader: 'postcss-loader'
+          }
         ],
       },
     ],
