@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect, useState, useMemo } from 'react';
 import classNames from 'classnames';
 
 /******************************************************************************
@@ -97,54 +97,6 @@ Button.defaultProps = {
 };
 
 /**
- * 页面中最常用的商品优惠场景 原价多少加个下划线 支持货币符号定制 默认￥ 不展示货币单位时传空串
- * **引用方法如下**
- *
- * ~~~js
- * 基本用法
- * import { OriginPrice } from 'yx-react-component'
- * ~~~
- */
-var OriginPrice = function (props) {
-    var _a;
-    var style = props.style, size = props.size, unit = props.unit, price = props.price;
-    var classes = classNames('origin-price', (_a = {},
-        _a["btn-".concat(size)] = size,
-        _a));
-    return (React.createElement("span", { className: classes, style: __assign({}, style) },
-        unit,
-        price));
-};
-OriginPrice.defaultProps = {
-    size: 'default',
-    unit: '￥'
-};
-
-/**
- * 页面中最常用的商品优惠场景 现价(优惠价) 支持货币符号定制 默认￥ 不展示货币单位时传空串
- * **引用方法如下**
- *
- * ~~~js
- * 基本用法
- * import { DiscountPrice } from 'yx-react-component'
- * ~~~
- */
-var DiscountPrice = function (props) {
-    var _a;
-    var style = props.style, unit = props.unit, size = props.size, price = props.price;
-    var classes = classNames('discount-price', (_a = {},
-        _a["discount-price-".concat(size)] = size,
-        _a));
-    return (React.createElement("span", { className: classes, style: __assign({}, style) },
-        React.createElement("i", { className: 'unit' }, unit),
-        price));
-};
-DiscountPrice.defaultProps = {
-    unit: '￥',
-    size: 'default'
-};
-
-/**
  * 页面中最常用的的确认框，适合于征询用户意见后执行相应的动作
  * **引用方法如下**
  *
@@ -176,4 +128,119 @@ Confirm.defaultProps = {
     cancelBtnText: '取消'
 };
 
-export { Button, Confirm, DiscountPrice, OriginPrice };
+function usePreventTouch(rootId, boxId) {
+    useEffect(function () {
+        var rootElement = rootId && document.getElementById(rootId);
+        var scrollBox = boxId && document.getElementById(boxId);
+        function handle(e) {
+            e.preventDefault();
+        }
+        function handle1(e) {
+            e.stopPropagation();
+        }
+        rootElement && rootElement.addEventListener("touchmove", handle, false);
+        scrollBox && scrollBox.addEventListener("touchmove", handle1, false);
+        return function () {
+            rootElement && rootElement.removeEventListener("touchmove", handle);
+            scrollBox && scrollBox.removeEventListener("touchmove", handle1);
+        };
+    }, []);
+}
+
+/**
+ * 页面中登录框
+ * **引用方法如下**
+ *
+ * ~~~js
+ * 基本用法
+ * import { LoginPopup } from 'yx-react-component'
+ * ~~~
+ */
+var LoginPopup = function (props) {
+    var getCodeFunc = props.getCodeFunc, submitFunc = props.submitFunc, closeFunc = props.closeFunc, title = props.title, btnText = props.btnText;
+    var _a = useState(''), phoneNum = _a[0], setPhoneNum = _a[1];
+    var _b = useState(''), captcha = _b[0], setCaptcha = _b[1];
+    var _c = useState(0), scount = _c[0], setScount = _c[1];
+    var isAble = useMemo(function () {
+        return !!phoneNum && !!captcha;
+    }, [phoneNum, captcha]);
+    var countRef = useRef(0);
+    var phoneInputRef = useRef(null);
+    var captchaInputRef = useRef(null);
+    usePreventTouch('root');
+    // 获取验证码
+    function getCodeFn() {
+        if (countRef.current) {
+            return;
+        }
+        if (!phoneNum) {
+            if (phoneInputRef.current) {
+                phoneInputRef.current.focus();
+            }
+            return;
+        }
+        getCodeFunc(phoneNum).then(function () {
+            countRef.current = 60;
+            setScount(countRef.current);
+            var interVal = setInterval(function () {
+                if (countRef.current <= 0) {
+                    countRef.current = 0;
+                    clearInterval(interVal);
+                }
+                else {
+                    countRef.current = countRef.current - 1;
+                    setScount(countRef.current);
+                }
+            }, 1000);
+        });
+    }
+    // 提交
+    function submit() {
+        if (!phoneNum && phoneInputRef.current) {
+            phoneInputRef.current.focus();
+            return;
+        }
+        if (!captcha && captchaInputRef.current) {
+            captchaInputRef.current.focus();
+            return;
+        }
+        submitFunc({
+            mobile: phoneNum,
+            captcha: captcha
+        });
+    }
+    // 点击关闭按钮
+    function myCloseFn() {
+        closeFunc && closeFunc();
+    }
+    return (React.createElement(React.Fragment, null,
+        React.createElement("span", { className: 'package-login-mask-animation' }),
+        React.createElement("section", { className: 'package-login-panel' },
+            React.createElement("span", { className: 'package-login-close-icon', onClick: myCloseFn }),
+            React.createElement("h3", { className: 'package-login-title' },
+                title,
+                " "),
+            React.createElement("ul", { className: 'package-login-input-panel' },
+                React.createElement("li", { className: 'package-login-input-item' },
+                    React.createElement("input", { placeholder: '\u8BF7\u8F93\u5165\u624B\u673A\u53F7', className: 'package-login-input', type: 'number', value: phoneNum, ref: phoneInputRef, onChange: function (e) {
+                            var value = e.target.value.trim();
+                            if (value.length <= 11) {
+                                setPhoneNum(value);
+                            }
+                        } })),
+                React.createElement("li", { className: 'package-login-input-item' },
+                    React.createElement("input", { placeholder: '\u624B\u673A\u9A8C\u8BC1\u7801', className: 'package-login-input', type: 'number', value: captcha, ref: captchaInputRef, onChange: function (e) {
+                            var value = e.target.value.trim();
+                            if (value.length <= 6) {
+                                setCaptcha(value);
+                            }
+                        } }),
+                    React.createElement("span", { className: scount ? 'package-login-get-code-btn disable' : 'package-login-get-code-btn', onClick: getCodeFn }, scount ? "".concat(scount, "s") : '获取验证码'))),
+            React.createElement(Button, { disabled: !isAble, style: { width: '100%' }, onClick: submit }, btnText))));
+};
+LoginPopup.defaultProps = {
+    title: '登录',
+    btnText: '登录'
+};
+
+export { Button, Confirm, LoginPopup };

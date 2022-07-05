@@ -11,10 +11,9 @@
   "scripts": {
     "clean": "npx rimraf ./dist",
     "start": "webpack-dev-server",
-    "build": "npm run clean && npm run build-ts && npm run copy-json && npm run build-css",
+    "build": "npm run clean && npx rollup --config rollup/rollup.config.js",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "build-rollup": "npm run clean && npx rollup --config rollup/rollup.config.js"
+    "build-storybook": "build-storybook"
   },
   "repository": {
     "type": "git",
