@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom';
-import { Button, OriginPrice } from './components'
+import { Button, OriginPrice } from './index'
 import '../styles/index.scss'
 
 interface IBaseProps { }
@@ -11,7 +11,7 @@ const App: React.FC<IBaseProps> = () => {
     <Button>aaa</Button>
     <Button style={{ width: '100%' }}>aaa</Button>
     <Button style={{ width: '100%' }} disabled>disabled</Button>
-    <Button size='lg' disabled>123</Button>
+    {/* <Button size='lg' disabled>123</Button> */}
     <OriginPrice price={123} />
   </div>
 }
