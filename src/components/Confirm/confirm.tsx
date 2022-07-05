@@ -1,11 +1,10 @@
 import React, { FC } from 'react'
-type ICallback = () => void
 
 export interface IConfirmProps {
   /**点击确认的事件  */
-  onOKCallback?: ICallback;
+  onOKCallback?: () => void;
   /**点击取消的事件 */
-  onCancelCallback?: ICallback;
+  onCancelCallback?: () => void;
   /**标题 */
   title?: string;
   /**副标题 */
@@ -60,3 +59,5 @@ Confirm.defaultProps = {
   okBtnText: '确定',
   cancelBtnText: '取消'
 }
+
+

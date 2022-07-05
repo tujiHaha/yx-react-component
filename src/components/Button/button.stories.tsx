@@ -1,64 +1,56 @@
 import React from 'react';
-import { Story, Meta } from '@storybook/react';
-import { Button, ButtonProps } from './button';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Button } from './button';
 
+// https://github.com/storybookjs/storybook/issues/15574
+// 大的菜单
 export default {
-  title: 'Button',
+  title: 'Button按钮',
   component: Button,
-  parameters: {
-    backgrounds: {
-      values: [
-        { name: 'light', value: '#fff' },
-        { name: 'dark', value: '#000' },
-        { name: 'red', value: '#f00' },
-        { name: 'green', value: '#0f0' },
-        { name: 'blue', value: '#00f' },
-      ],
-    },
-  },
-  argTypes: {
-    onClick: {
-      action: 'clicked',
-      description: '点击button时触发的事件',
-    },
-  }
-} as Meta;
+} as ComponentMeta<typeof Button>
 
-const Template: Story<ButtonProps> = (args) => <Button {...args} >默认按钮</Button>;
+// 创建一个模板
+const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />
+
+// 创建一个story 子菜单
+export const ADefault = Template.bind({})
+ADefault.args = {
+  children: 'Default Button',
+}
+ADefault.storyName = '默认按钮样式'
+
+// size sm
+export const SmallBtn = Template.bind({})
+SmallBtn.args = {
+  children: '小按钮样式',
+  size: 'sm'
+}
+SmallBtn.storyName = 'sm按钮样式'
+
+// size lg
+export const LargeBtn = Template.bind({})
+LargeBtn.args = {
+  children: '大按钮样式',
+  size: 'lg'
+}
+LargeBtn.storyName = 'lg按钮样式'
+
+// disable
+export const DisableBtn = Template.bind({})
+DisableBtn.args = {
+  children: 'disable',
+  disabled: true
+}
+DisableBtn.storyName = '禁用按钮样式'
+
+// full
+export const FullBtn = Template.bind({})
+FullBtn.args = {
+  children: '整行按钮',
+  style: { width: '100%' }
+}
+FullBtn.storyName = '整行按钮'
 
 
-export const DefaultBtn = Template.bind({});
-DefaultBtn.storyName = '默认按钮'
-DefaultBtn.parameters = {
-  docs: {
-    source: { code: '<Button>默认按钮</Button>' },
-  },
-};
-
-
-
-export const third = () => (
-  <>
-    <Button size="default" onClick={() => console.log('click me')}>默认大小按钮</Button>
-    <Button size="sm">小型按钮</Button>
-    <Button size="default" disabled>小型按钮disabled</Button>
-    <Button size="default" timerCount={0}>不需要防重复</Button>
-    <Button size="default" style={{ width: '100%' }}>满行按钮</Button>
-  </>
-)
-third.storyName = '不同大小按钮';
-
-third.parameters = {
-  docs: {
-    source: {
-      code: `<>
-    <Button size="default" onClick={() => console.log('click me')}>默认大小按钮</Button>
-    <Button size="sm">小型按钮</Button>
-    <Button size="default" disabled>小型按钮disabled</Button>
-    <Button size="default" timerCount={0}>不需要防重复</Button>
-    <Button size="default" style={{ width: '100%' }}>满行按钮</Button>
-  </>` },
-  },
-};
 
 

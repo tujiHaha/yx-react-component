@@ -4,6 +4,7 @@ module.exports = {
     builder: 'webpack5',
   },
   stories: [
+    "../src/**/*.stories.mdx",
     "../src/components/**/*.stories.@(js|jsx|ts|tsx)"
   ],
   addons: [
@@ -37,5 +38,5 @@ module.exports = {
     });
     return config;
   },
-  "framework": "@storybook/react"
+  "framework": "@storybook/react",
 }

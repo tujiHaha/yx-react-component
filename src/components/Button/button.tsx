@@ -1,7 +1,6 @@
 import React, { FC, ButtonHTMLAttributes, useRef } from 'react'
 import classNames from 'classnames'
-
-export type ButtonSize = 'default' | 'sm'
+export type ButtonSize = 'default' | 'sm' | 'lg'
 
 interface BaseButtonProps {
   /**自定义类名 */
@@ -11,7 +10,7 @@ interface BaseButtonProps {
   /**设置 Button 的尺寸 */
   size?: ButtonSize;
   /**设置 点击事件 */
-  onClick?: React.MouseEventHandler<HTMLElement>
+  onClick?: () => void
   /**设置 点击事件防重复的时间间隔 默认300毫秒 如不需要防重复设为0 */
   timerCount?: number;
   /**设置 按钮文字 */
@@ -73,7 +72,7 @@ export const Button: FC<ButtonProps> = (props) => {
       if (!flag) {
         return
       }
-      onClick(e)
+      onClick()
       setFlag(false)
       const timer = setTimeout(() => {
         clearTimeout(timer)
@@ -82,7 +81,7 @@ export const Button: FC<ButtonProps> = (props) => {
       return
     }
     if (onClick) {
-      onClick(e)
+      onClick()
     }
   }
 
@@ -103,3 +102,4 @@ Button.defaultProps = {
   size: 'default',
   timerCount: 300
 }
+

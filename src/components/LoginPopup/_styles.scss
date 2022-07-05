@@ -109,6 +109,7 @@
         color: #FE6B00;
         line-height: 44px;
         padding-right: 16px;
+        cursor: pointer;
 
         @include ipad {
           font-size: toRem(40px);
