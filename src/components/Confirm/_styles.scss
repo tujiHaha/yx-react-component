@@ -1,7 +1,7 @@
-.package-confirm-wrap {
+.namid-confirm-wrap {
   @include maskMixin(100);
 
-  .package-confirm-content {
+  .namid-confirm-content {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -19,7 +19,7 @@
       padding: toRem(108px) toRem(48px) toRem(56px);
     }
 
-    .package-confirm-title {
+    .namid-confirm-title {
       font-size: 32px;
       font-weight: 400;
       color: #333;
@@ -33,7 +33,7 @@
       }
     }
 
-    .package-confirm-sub-title {
+    .namid-confirm-sub-title {
       font-size: 28px;
       font-weight: 400;
       color: #444;
@@ -47,11 +47,11 @@
       }
     }
 
-    .package-confirm-btn-bar {
+    .namid-confirm-btn-bar {
       display: flex;
       justify-content: space-between;
 
-      .package-confirm-ok-btn {
+      .namid-confirm-ok-btn {
         background: #F3F8FC;
         text-align: center;
         display: block;
@@ -72,7 +72,7 @@
         }
       }
 
-      .package-confirm-quit-btn {
+      .namid-confirm-quit-btn {
         background: linear-gradient(90deg, #FFB400 0%, #FE6B00 100%);
         text-align: center;
         display: block;

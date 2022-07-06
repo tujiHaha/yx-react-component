@@ -23,7 +23,7 @@ const Template: Story<IConfirmProps> = (args) => {
   }
 
   return <>
-    <Button onClick={() => setIsshow(!isshow)}>显示confirm</Button>
+    <Button onClick={() => setIsshow(!isshow)} btnType='orange'>显示confirm</Button>
     {isshow && <Confirm
       {...args}
       title='确认框标题'

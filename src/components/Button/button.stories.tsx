@@ -19,27 +19,36 @@ ADefault.args = {
 }
 ADefault.storyName = '默认按钮样式'
 
-// size sm
-export const SmallBtn = Template.bind({})
-SmallBtn.args = {
-  children: '小按钮样式',
-  size: 'sm'
-}
-SmallBtn.storyName = 'sm按钮样式'
+// size btn
+export const SizeBtn = () => (
+  <>
+    <Button size="sm" btnType='blue'> small button </Button><br />
+    <Button size="default" btnType='blue'> default button </Button><br />
+    <Button size="lg" btnType='blue'> large button </Button>
+  </>
+)
+SizeBtn.storyName = '不同尺寸的按钮'
 
-// size lg
-export const LargeBtn = Template.bind({})
-LargeBtn.args = {
-  children: '大按钮样式',
-  size: 'lg'
-}
-LargeBtn.storyName = 'lg按钮样式'
+// size btn
+export const TypeBtn = () => (
+  <>
+    <Button btnType='default'> default button </Button>
+    <Button btnType='blue'> blue button </Button>
+    <Button btnType='orange'> orange button </Button>
+    <Button btnType='linear-red-orange'> linear-red-orange button </Button>
+    <Button btnType='linear-yellow-orange'> linear-yellow-orange </Button>
+  </>
+)
+TypeBtn.storyName = '不同颜色的按钮'
+
+
 
 // disable
 export const DisableBtn = Template.bind({})
 DisableBtn.args = {
   children: 'disable',
-  disabled: true
+  disabled: true,
+  btnType: 'blue'
 }
 DisableBtn.storyName = '禁用按钮样式'
 
@@ -47,7 +56,9 @@ DisableBtn.storyName = '禁用按钮样式'
 export const FullBtn = Template.bind({})
 FullBtn.args = {
   children: '整行按钮',
-  style: { width: '100%' }
+  btnType: 'blue',
+  style: { width: '100%' },
+
 }
 FullBtn.storyName = '整行按钮'
 

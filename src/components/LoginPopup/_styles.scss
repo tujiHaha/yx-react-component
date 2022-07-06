@@ -8,7 +8,7 @@
   }
 }
 
-.package-login-panel {
+.namid-login-panel {
   position: fixed;
   left: 0;
   bottom: 0;
@@ -25,7 +25,7 @@
     border-radius: toRem(50px) toRem(50px) 0 0;
   }
 
-  .package-login-close-icon {
+  .namid-login-close-icon {
     position: absolute;
     width: 40px;
     height: 40px;
@@ -44,7 +44,7 @@
     }
   }
 
-  .package-login-title {
+  .namid-login-title {
     height: 45px;
     font-size: 32px;
     font-weight: 500;
@@ -62,8 +62,8 @@
     }
   }
 
-  .package-login-input-panel {
-    .package-login-input-item {
+  .namid-login-input-panel {
+    .namid-login-input-item {
       height: 80px;
       background: #F3F8FC;
       border-radius: 40px;
@@ -79,7 +79,7 @@
         margin-bottom: toRem(42px);
       }
 
-      .package-login-input {
+      .namid-login-input {
         flex: 1;
         height: 44px;
         line-height: 40px;
@@ -104,7 +104,7 @@
       }
 
 
-      .package-login-get-code-btn {
+      .namid-login-get-code-btn {
         font-size: 28px;
         color: #FE6B00;
         line-height: 44px;
@@ -163,6 +163,6 @@
 }
 
 
-.package-login-mask-animation {
+.namid-login-mask-animation {
   @include maskMixin(2, rgba(0, 0, 0, 0.5));
 }

@@ -5,15 +5,15 @@ import type { TDirectionX } from './utils';
 import { moveBoundary, getMovePageCount } from './utils';
 
 export interface ISwiperProps {
-  // 滑动end回调
-  onSliderChange?: (currentIndex: number) => void;
-  // 子item 
+  /** 子item */
   children: React.ReactNode;
-  // 非active 状态缩小倍数 0-1之间
+  /** 滑动end回调  */
+  onSliderChange?: (currentIndex: number) => void;
+  /** 非active 状态缩小倍数 0-1之间 */
   scale?: number;
-  // 屏幕中存在Item个数 不小于1
+  /** 屏幕中存在Item个数 不小于1 */
   clientItemCount?: number; // 一屏里面放多少item
-  // 默认选中的index
+  /** 默认选中的index */
   defaultIndex?: number;
 }
 
@@ -46,6 +46,7 @@ export const SwiperContext = createContext<IContextType>({
  * ~~~js
  * 基本用法
  * import { Swiper } from 'yx-react-component'
+ * //然后可以使用 Swiper.Item
  * ~~~
  */
 export const Swiper: FC<ISwiperProps> = (props) => {

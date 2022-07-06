@@ -33,7 +33,7 @@ const Template: Story<ILogioPopupProps> = (args) => {
   }
 
   return <>
-    <Button onClick={() => setIsshow(!isshow)}>显示登录框</Button>
+    <Button onClick={() => setIsshow(!isshow)} btnType='orange'>显示登录框</Button>
     {isshow && <LoginPopup
       getCodeFunc={getCodeFunc}
       submitFunc={submitFunc}

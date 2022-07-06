@@ -300,6 +300,7 @@ var SwiperContext = createContext({
  * ~~~js
  * 基本用法
  * import { Swiper } from 'yx-react-component'
+ * //然后可以使用 Swiper.Item
  * ~~~
  */
 var Swiper = function (props) {

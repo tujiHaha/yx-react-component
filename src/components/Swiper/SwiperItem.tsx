@@ -1,12 +1,10 @@
 import React, { FC, useContext } from 'react';
 import { SwiperContext } from './Swiper';
-// import styles from './swiper-item.scss';
-
-export type TOnClick = (index: number) => void;
 
 export interface ISwiperItemProps {
+  children: React.ReactNode;
+  /**下标index */
   index?: number;
-  children?: React.ReactNode;
   style?: React.CSSProperties;
 }
 
@@ -14,7 +12,6 @@ export const SwiperItem: FC<ISwiperItemProps> = (props) => {
   const index = props.index as number;
   const { currentIndex, onClick, getRef, itemWidth, scale } =
     useContext(SwiperContext);
-
   return (
     <div
       className='namid-swipers-item'
@@ -35,4 +32,6 @@ export const SwiperItem: FC<ISwiperItemProps> = (props) => {
     </div>
   );
 };
+
+export default SwiperItem
 

@@ -1,12 +1,12 @@
-.package-btn {
+.namid-btn {
   height: 80px;
   padding: 0 64px;
   border-radius: 40px;
-  background: linear-gradient(266deg, #FE4C00 0%, #FE8C00 100%);
+  background-color: #F3F8FC;
 
   font-size: 28px;
   font-weight: 400;
-  color: #FFFFFF;
+  color: #1F2B43;
 
   border: none;
   outline: none;
@@ -23,7 +23,27 @@
     line-height: toRem(112px);
   }
 
-  &.package-btn-sm {
+  &.namid-btn-type-orange {
+    background-color: #FE6B00;
+    color: #fff
+  }
+
+  &.namid-btn-type-blue {
+    background-color: #00B9FF;
+    color: #fff
+  }
+
+  &.namid-btn-type-linear-red-orange {
+    background: linear-gradient(266deg, #FE4C00 0%, #FE8C00 100%);
+    color: #fff
+  }
+
+  &.namid-btn-type-linear-yellow-orange {
+    background: linear-gradient(90deg, #FFB400 0%, #FE6B00 100%);
+    color: #fff
+  }
+
+  &.namid-btn-size-sm {
     height: 48px;
     padding: 0 24px;
     border-radius: 24px;
@@ -39,7 +59,7 @@
     }
   }
 
-  &.package-btn-lg {
+  &.namid-btn-size-lg {
     height: 100px;
     padding: 0 60px;
     border-radius: 50px;
@@ -55,6 +75,7 @@
 
   &.disabled {
     filter: grayscale(20%);
-    cursor: not-allowed
+    cursor: not-allowed;
+    opacity: 0.8
   }
 }

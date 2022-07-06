@@ -1,6 +1,7 @@
 import React, { FC, ButtonHTMLAttributes, useRef } from 'react'
 import classNames from 'classnames'
 export type ButtonSize = 'default' | 'sm' | 'lg'
+export type ButtonType = 'default' | 'orange' | 'blue' | 'linear-red-orange' | 'linear-yellow-orange'
 
 interface BaseButtonProps {
   /**自定义类名 */
@@ -9,6 +10,8 @@ interface BaseButtonProps {
   disabled?: boolean;
   /**设置 Button 的尺寸 */
   size?: ButtonSize;
+  /**设置 Button 的主题色样式 */
+  btnType?: ButtonType;
   /**设置 点击事件 */
   onClick?: () => void
   /**设置 点击事件防重复的时间间隔 默认300毫秒 如不需要防重复设为0 */
@@ -48,6 +51,7 @@ export const Button: FC<ButtonProps> = (props) => {
     className,
     disabled,
     size,
+    btnType,
     children,
     onClick,
     timerCount,
@@ -57,8 +61,9 @@ export const Button: FC<ButtonProps> = (props) => {
   const flagRef = useRef(closureFlag())
   const { getFlag, setFlag } = flagRef.current
   // btn, btn-lg, btn-primary
-  const classes = classNames('package-btn', className, {
-    [`package-btn-${size}`]: size,
+  const classes = classNames('namid-btn', className, {
+    [`namid-btn-size-${size}`]: size,
+    [`namid-btn-type-${btnType}`]: btnType,
     'disabled': disabled
   })
 

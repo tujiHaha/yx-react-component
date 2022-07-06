@@ -98,14 +98,14 @@ export const LoginPopup: FC<ILogioPopupProps> = (props) => {
   }
   return (
     <>
-      <span className={'package-login-mask-animation'}></span>
-      <section className={'package-login-panel'}>
-        <span className={'package-login-close-icon'} onClick={myCloseFn}></span>
-        <h3 className={'package-login-title'}>{title} </h3>
-        <ul className={'package-login-input-panel'}>
-          <li className={'package-login-input-item'}>
+      <span className={'namid-login-mask-animation'}></span>
+      <section className={'namid-login-panel'}>
+        <span className={'namid-login-close-icon'} onClick={myCloseFn}></span>
+        <h3 className={'namid-login-title'}>{title} </h3>
+        <ul className={'namid-login-input-panel'}>
+          <li className={'namid-login-input-item'}>
             <input placeholder='请输入手机号'
-              className={'package-login-input'}
+              className={'namid-login-input'}
               type='number'
               value={phoneNum}
               ref={phoneInputRef}
@@ -118,9 +118,9 @@ export const LoginPopup: FC<ILogioPopupProps> = (props) => {
             />
           </li>
 
-          <li className={'package-login-input-item'}>
+          <li className={'namid-login-input-item'}>
             <input placeholder='手机验证码'
-              className={'package-login-input'}
+              className={'namid-login-input'}
               type='number'
               value={captcha}
               ref={captchaInputRef}
@@ -131,13 +131,14 @@ export const LoginPopup: FC<ILogioPopupProps> = (props) => {
                 }
               }} />
             <span
-              className={scount ? 'package-login-get-code-btn disable' : 'package-login-get-code-btn'}
+              className={scount ? 'namid-login-get-code-btn disable' : 'namid-login-get-code-btn'}
               onClick={getCodeFn}>{scount ? `${scount}s` : '获取验证码'}</span>
           </li>
         </ul>
         <Button
           disabled={!isAble}
           style={{ width: '100%' }}
+          btnType='linear-red-orange'
           onClick={submit}>{btnText}</Button>
       </section>
     </>

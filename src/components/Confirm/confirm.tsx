@@ -38,15 +38,15 @@ export const Confirm: FC<IConfirmProps> = (props) => {
   }
 
   return (
-    <div className='package-confirm-wrap' >
-      <section className='package-confirm-content'>
-        <h4 className={'package-confirm-title'}>{title}</h4>
+    <div className='namid-confirm-wrap' >
+      <section className='namid-confirm-content'>
+        <h4 className={'namid-confirm-title'}>{title}</h4>
         {
-          !!subTitle && <p className={'package-confirm-sub-title'}>{subTitle}</p>
+          !!subTitle && <p className={'namid-confirm-sub-title'}>{subTitle}</p>
         }
-        <div className={'package-confirm-btn-bar'}>
-          <span className={'package-confirm-ok-btn'} onClick={handleOk}>{cancelBtnText}</span>
-          <span className={'package-confirm-quit-btn'} onClick={handleCancel}>{okBtnText}</span>
+        <div className={'namid-confirm-btn-bar'}>
+          <span className={'namid-confirm-ok-btn'} onClick={handleOk}>{cancelBtnText}</span>
+          <span className={'namid-confirm-quit-btn'} onClick={handleCancel}>{okBtnText}</span>
         </div>
       </section>
     </div>
